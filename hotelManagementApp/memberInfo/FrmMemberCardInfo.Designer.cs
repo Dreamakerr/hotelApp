@@ -30,7 +30,7 @@
         {
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboCType = new System.Windows.Forms.ComboBox();
+            this.cboCTypes = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCardNo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,16 +68,14 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "状态：";
             // 
-            // cboCType
+            // cboCTypes
             // 
-            this.cboCType.FormattingEnabled = true;
-            this.cboCType.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.cboCType.Location = new System.Drawing.Point(276, 191);
-            this.cboCType.Name = "cboCType";
-            this.cboCType.Size = new System.Drawing.Size(414, 26);
-            this.cboCType.TabIndex = 19;
+            this.cboCTypes.FormattingEnabled = true;
+            this.cboCTypes.Location = new System.Drawing.Point(276, 191);
+            this.cboCTypes.Name = "cboCTypes";
+            this.cboCTypes.Size = new System.Drawing.Size(414, 26);
+            this.cboCTypes.TabIndex = 19;
+            this.cboCTypes.SelectedIndexChanged += new System.EventHandler(this.cboCTypes_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -191,6 +189,7 @@
             this.btnBack.TabIndex = 31;
             this.btnBack.Text = "返回";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAdd
             // 
@@ -205,6 +204,7 @@
             this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "新增";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmMemberCardInfo
             // 
@@ -221,7 +221,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.cboCType);
+            this.Controls.Add(this.cboCTypes);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCardNo);
             this.Controls.Add(this.label4);
@@ -241,7 +241,7 @@
 
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cboCType;
+        private System.Windows.Forms.ComboBox cboCTypes;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCardNo;
         private System.Windows.Forms.Label label4;
