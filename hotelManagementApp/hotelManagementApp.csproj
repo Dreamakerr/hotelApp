@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D461DF8-63F0-4218-A89B-6980919CABFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>hotelManagementApp</RootNamespace>
+    <AssemblyName>hotelManagementApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="basicInfo\FrmMCardType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="basicInfo\FrmMCardType.Designer.cs">
+      <DependentUpon>FrmMCardType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataStat\FrmMemberExpendReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataStat\FrmMemberExpendReport.Designer.cs">
+      <DependentUpon>FrmMemberExpendReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataStat\FrmMemberIntegralReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataStat\FrmMemberIntegralReport.Designer.cs">
+      <DependentUpon>FrmMemberIntegralReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dataStat\FrmNewMemberReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataStat\FrmNewMemberReport.Designer.cs">
+      <DependentUpon>FrmNewMemberReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmCardRecharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmCardRecharge.Designer.cs">
+      <DependentUpon>FrmCardRecharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmCheckOut.Designer.cs">
+      <DependentUpon>FrmCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmIntegralExchange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmIntegralExchange.Designer.cs">
+      <DependentUpon>FrmIntegralExchange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberCardInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberCardInfo.Designer.cs">
+      <DependentUpon>FrmMemberCardInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberCardList.Designer.cs">
+      <DependentUpon>FrmMemberCardList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberIntegralList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberIntegralList.Designer.cs">
+      <DependentUpon>FrmMemberIntegralList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="memberInfo\FrmMemberList.Designer.cs">
+      <DependentUpon>FrmMemberList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utility\mCardEventArgs.cs" />
+    <Compile Include="utility\messageHelper.cs" />
+    <EmbeddedResource Include="basicInfo\FrmMCardType.resx">
+      <DependentUpon>FrmMCardType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataStat\FrmMemberExpendReport.resx">
+      <DependentUpon>FrmMemberExpendReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataStat\FrmMemberIntegralReport.resx">
+      <DependentUpon>FrmMemberIntegralReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dataStat\FrmNewMemberReport.resx">
+      <DependentUpon>FrmNewMemberReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmCardRecharge.resx">
+      <DependentUpon>FrmCardRecharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmCheckOut.resx">
+      <DependentUpon>FrmCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmIntegralExchange.resx">
+      <DependentUpon>FrmIntegralExchange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmMemberCardInfo.resx">
+      <DependentUpon>FrmMemberCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmMemberCardList.resx">
+      <DependentUpon>FrmMemberCardList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmMemberIntegralList.resx">
+      <DependentUpon>FrmMemberIntegralList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="memberInfo\FrmMemberList.resx">
+      <DependentUpon>FrmMemberList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\common.csproj">
+      <Project>{50b0d0e8-408a-45a7-932b-50bf7d7d3b18}</Project>
+      <Name>common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\hotelManagementApp.BLL\hotelManagementApp.BLL.csproj">
+      <Project>{a32230cf-55d5-43a9-ab7c-228231e30b73}</Project>
+      <Name>hotelManagementApp.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\hotelManagementApp.Models\hotelManagementApp.Models.csproj">
+      <Project>{93856c55-fc68-46ee-b59e-984e0b6d50dc}</Project>
+      <Name>hotelManagementApp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
