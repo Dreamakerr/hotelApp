@@ -37,7 +37,7 @@ namespace hotelManagementApp.DAL
             {
                 commandText = inteModel.Sql,
                 IsProc = false,
-                Paras = expendModel.Paras
+                Paras = inteModel.Paras
             });
 
             //更新会员卡的余额和积分

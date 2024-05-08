@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOK
@@ -58,6 +59,7 @@
             this.btnOK.TabIndex = 36;
             this.btnOK.Text = "退房";
             this.btnOK.UseVisualStyleBackColor = false;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // txtRoomNo
             // 
@@ -119,6 +121,7 @@
             this.txtExpendAmount.Name = "txtExpendAmount";
             this.txtExpendAmount.Size = new System.Drawing.Size(414, 28);
             this.txtExpendAmount.TabIndex = 40;
+            this.txtExpendAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExpendAmount_KeyPress);
             // 
             // label3
             // 
@@ -187,11 +190,23 @@
             this.label8.TabIndex = 46;
             this.label8.Text = "元";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(746, 390);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 28);
+            this.label9.TabIndex = 47;
+            this.label9.Text = "%";
+            // 
             // FrmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 686);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPayAmount);
@@ -209,7 +224,9 @@
             this.Controls.Add(this.label4);
             this.Name = "FrmCheckOut";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "退房页面";
+            this.Load += new System.EventHandler(this.FrmCheckOut_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +249,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
