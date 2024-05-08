@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "01",
             "2024042900001",
             "张三",
@@ -43,24 +43,24 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.lvMemberCardList = new System.Windows.Forms.ListView();
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCardNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDiscount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colBalance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCreateDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colIntegralValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnFind = new System.Windows.Forms.Button();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnActivate = new System.Windows.Forms.Button();
             this.btnRecharge = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboCType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.colIntegralValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colState = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -77,6 +77,7 @@
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "修改";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCheckOut
             // 
@@ -91,6 +92,7 @@
             this.btnCheckOut.TabIndex = 30;
             this.btnCheckOut.Text = "退房";
             this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // btnDelete
             // 
@@ -105,6 +107,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lvMemberCardList
             // 
@@ -125,7 +128,7 @@
             this.lvMemberCardList.FullRowSelect = true;
             this.lvMemberCardList.HideSelection = false;
             this.lvMemberCardList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem5});
             this.lvMemberCardList.Location = new System.Drawing.Point(53, 219);
             this.lvMemberCardList.Name = "lvMemberCardList";
             this.lvMemberCardList.Size = new System.Drawing.Size(1452, 628);
@@ -138,25 +141,25 @@
             // 
             this.colId.Text = "编号";
             // 
-            // colName
-            // 
-            this.colName.Text = "姓名";
-            this.colName.Width = 100;
-            // 
             // colCardNo
             // 
             this.colCardNo.Text = "卡号";
             this.colCardNo.Width = 182;
             // 
+            // colName
+            // 
+            this.colName.Text = "姓名";
+            this.colName.Width = 100;
+            // 
             // colType
             // 
             this.colType.Text = "卡类型";
-            this.colType.Width = 100;
+            this.colType.Width = 70;
             // 
             // colDiscount
             // 
             this.colDiscount.Text = "折扣";
-            this.colDiscount.Width = 139;
+            this.colDiscount.Width = 70;
             // 
             // colBalance
             // 
@@ -166,7 +169,17 @@
             // colCreateDate
             // 
             this.colCreateDate.Text = "办卡日期";
-            this.colCreateDate.Width = 222;
+            this.colCreateDate.Width = 100;
+            // 
+            // colIntegralValue
+            // 
+            this.colIntegralValue.Text = "可用积分";
+            this.colIntegralValue.Width = 120;
+            // 
+            // colState
+            // 
+            this.colState.Text = "卡状态";
+            this.colState.Width = 89;
             // 
             // btnFind
             // 
@@ -181,6 +194,7 @@
             this.btnFind.TabIndex = 25;
             this.btnFind.Text = "查询";
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtKeyword
             // 
@@ -212,6 +226,7 @@
             this.btnRemove.TabIndex = 32;
             this.btnRemove.Text = "销卡";
             this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnActivate
             // 
@@ -226,6 +241,7 @@
             this.btnActivate.TabIndex = 29;
             this.btnActivate.Text = "激活";
             this.btnActivate.UseVisualStyleBackColor = false;
+            this.btnActivate.Click += new System.EventHandler(this.btnActivate_Click);
             // 
             // btnRecharge
             // 
@@ -240,17 +256,15 @@
             this.btnRecharge.TabIndex = 33;
             this.btnRecharge.Text = "充值";
             this.btnRecharge.UseVisualStyleBackColor = false;
+            this.btnRecharge.Click += new System.EventHandler(this.btnRecharge_Click);
             // 
-            // comboBox1
+            // cboCType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.comboBox1.Location = new System.Drawing.Point(694, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 26);
-            this.comboBox1.TabIndex = 36;
+            this.cboCType.FormattingEnabled = true;
+            this.cboCType.Location = new System.Drawing.Point(694, 74);
+            this.cboCType.Name = "cboCType";
+            this.cboCType.Size = new System.Drawing.Size(151, 26);
+            this.cboCType.TabIndex = 36;
             // 
             // label5
             // 
@@ -262,16 +276,18 @@
             this.label5.TabIndex = 35;
             this.label5.Text = "会员卡类型：";
             // 
-            // comboBox2
+            // cboState
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "男",
-            "女"});
-            this.comboBox2.Location = new System.Drawing.Point(1037, 74);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(140, 26);
-            this.comboBox2.TabIndex = 38;
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Items.AddRange(new object[] {
+            "请选择",
+            "已激活",
+            "已冻结",
+            "已销卡"});
+            this.cboState.Location = new System.Drawing.Point(1037, 74);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(140, 26);
+            this.cboState.TabIndex = 38;
             // 
             // label1
             // 
@@ -282,16 +298,6 @@
             this.label1.Size = new System.Drawing.Size(138, 28);
             this.label1.TabIndex = 37;
             this.label1.Text = "会员卡状态：";
-            // 
-            // colIntegralValue
-            // 
-            this.colIntegralValue.Text = "可用积分";
-            this.colIntegralValue.Width = 120;
-            // 
-            // colState
-            // 
-            this.colState.Text = "卡状态";
-            this.colState.Width = 135;
             // 
             // label8
             // 
@@ -309,9 +315,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1539, 873);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cboState);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboCType);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRecharge);
             this.Controls.Add(this.btnRemove);
@@ -326,6 +332,7 @@
             this.Name = "FrmMemberCardList";
             this.ShowIcon = false;
             this.Text = "会员卡管理";
+            this.Load += new System.EventHandler(this.FrmMemberCardList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,9 +357,9 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnActivate;
         private System.Windows.Forms.Button btnRecharge;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboCType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColumnHeader colIntegralValue;
         private System.Windows.Forms.ColumnHeader colState;

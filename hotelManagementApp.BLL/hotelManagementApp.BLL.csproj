@@ -44,6 +44,7 @@
     <Compile Include="cardTypeBLL.cs" />
     <Compile Include="memberBLL.cs" />
     <Compile Include="memberCardBLL.cs" />
+    <Compile Include="memberExpendBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="userBLL.cs" />
   </ItemGroup>

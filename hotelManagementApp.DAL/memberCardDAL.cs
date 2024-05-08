@@ -2,6 +2,7 @@
 using hotelManagementApp.DAL.Base;
 using hotelManagementApp.DAL.Helper;
 using hotelManagementApp.Models;
+using hotelManagementApp.Models.VModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -104,6 +105,98 @@ namespace hotelManagementApp.DAL
         {
             string cols = CreateSql.GetColNames<memberCard>("cardNo,createDate");
             return Update(cardInfo, cols);
+        }
+
+        /// <summary>
+        /// 会员卡激活 状态0->1
+        /// </summary>
+        /// <param name="cardId"></param>
+        /// <returns></returns>
+        public bool activateCard(int cardId)
+        {
+            string sql = $"update memberCard set cardState=1 where mCardId= {cardId}";
+            return sqlHelper.ExecuteNonQuery(sql, 1) > 0; //1代表sql语句
+        }
+
+        /// <summary>
+        /// 会员卡销卡
+        /// </summary>
+        /// <param name="cardInfo"></param>
+        /// <returns></returns>
+        public bool cancelCard(vMemberCard cardInfo)
+        {
+            List<commandInfo> comList = new List<commandInfo>();
+            //更新会员卡状态、余额、积分
+            string sqlUpdateCard = $"update memberCard set balance=0, cardState=2,integralValue=0 where mCardId={cardInfo.mCardId}";
+            comList.Add(new commandInfo()
+            {
+                commandText = sqlUpdateCard,
+                IsProc = false,//非存储过程
+            });
+            //逻辑删除会员
+            string sqlUpdateMember = $"update member set isDeleted=1 where memberId={cardInfo.memberId}";
+            comList.Add(new commandInfo()
+            {
+                commandText = sqlUpdateMember,
+                IsProc = false,
+            });
+            //添加积分变动记录
+            if(cardInfo.integralValue > 0)
+            {
+                int inteVal = -cardInfo.integralValue;
+                integralRecord inteInfo = new integralRecord()
+                {
+                    cardNo = cardInfo.cardNo,
+                    integralValue = inteVal,
+                    integralName = "销卡清空积分"
+                };
+                string cols = "cardNo,integralValue,integralName";
+                sqlModel inteModel = CreateSql.CreateInsertSql(inteInfo, cols, 0);
+                comList.Add(new commandInfo()
+                {
+                    commandText = inteModel.Sql,
+                    IsProc = false,
+                    Paras=inteModel.Paras
+                });
+            }
+            return sqlHelper.ExecuteTrans(comList);
+        }
+
+        /// <summary>
+        /// 会员卡删除（物理删除）
+        /// </summary>
+        /// <param name="cardNos"></param>
+        /// <returns></returns>
+        public bool deleteMemberCards(List<string> cardNos)
+        {
+            List<string> sqlList = new List<string>();
+            string strNos = string.Join(",", cardNos);//串联会员卡号
+            sqlList.Add($"update member set isDeleted=1 where cardNo in ({strNos})");
+            sqlList.Add($"delete from memberCard where cardNo in ({strNos})");
+            sqlList.Add($"delete from rechargeRecord where cardNo in ({strNos})");
+            sqlList.Add($"delete from integralRecord where cardNo in ({strNos})");
+            sqlList.Add($"delete from expendRecord where cardNo in ({strNos})");
+            return sqlHelper.ExecuteTrans(sqlList);
+        }
+
+        /// <summary>
+        /// 会员卡充值
+        /// </summary>
+        /// <param name="cardNo"></param>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public bool rechargeCard(string cardNo, decimal amount)
+        {
+            List<string> sqlList = new List<string>();
+            //添加充值记录
+            sqlList.Add($"insert into rechargeRecord (cardNo,rechargeAmount) values ('{cardNo}',{amount})");
+            //插入积分记录
+            int inteVal = (int)amount / 100;//积分值
+            string inteName = "充值送积分";
+            sqlList.Add($"insert into integralRecord (cardNo,integralName,integralValue) values ('{cardNo}','{inteName}','{inteVal}')");
+            //更新会员卡的余额和积分
+            sqlList.Add($"update memberCard set balance=balance+{amount},integralValue=integralValue+{inteVal} where cardNo={cardNo}");
+            return sqlHelper.ExecuteTrans(sqlList);
         }
     }
 }

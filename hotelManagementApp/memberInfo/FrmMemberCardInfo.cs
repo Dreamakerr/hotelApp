@@ -91,7 +91,7 @@ namespace hotelManagementApp.memberInfo
             else//新增
             {
                 cboCTypes.SelectedIndex = 0;
-                cboState.SelectedIndex = 0;
+                cboState.SelectedIndex = 1;
                 txtBalance.Text = "0.00";
                 txtDiscount.Text = "100";
                 txtIntegralValue.Text = "0";
@@ -235,6 +235,7 @@ namespace hotelManagementApp.memberInfo
                 {
                     MessageHelper.Info(msgTitle, "会员卡修改成功！");
                     memberCardEdited?.Invoke(this, new mCardEditEventArgs(cardInfo));
+                    this.Close();
                 }
             }
         }

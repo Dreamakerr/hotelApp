@@ -128,6 +128,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utility\mCardEditEventArgs.cs" />
     <Compile Include="utility\mCardEventArgs.cs" />
+    <Compile Include="utility\balanceRefreshEventArgs.cs" />
     <Compile Include="utility\messageHelper.cs" />
     <EmbeddedResource Include="basicInfo\FrmMCardType.resx">
       <DependentUpon>FrmMCardType.cs</DependentUpon>

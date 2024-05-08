@@ -24,6 +24,16 @@ namespace hotelManagementApp.BLL
         }
 
         /// <summary>
+        /// 获取指定的类别信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public cardType getCardType(int id)
+        {
+            return cardTypeDAL.GetById(id, "");
+        }
+
+        /// <summary>
         /// 添加会员卡类型
         /// </summary>
         /// <param name="cardType"></param>

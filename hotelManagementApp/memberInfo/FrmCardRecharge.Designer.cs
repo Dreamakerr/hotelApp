@@ -83,6 +83,7 @@
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "充值";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmCardRecharge
             // 
@@ -96,7 +97,9 @@
             this.Controls.Add(this.label4);
             this.Name = "FrmCardRecharge";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "会员卡充值";
+            this.Load += new System.EventHandler(this.FrmCardRecharge_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
