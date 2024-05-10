@@ -43,11 +43,11 @@ namespace hotelManagementApp.BLL
                 {
                     cardNo = cardNo,
                     integralName = "清空积分",
-                    integralValue = dicInteList[cardNo]
+                    integralValue = -dicInteList[cardNo]
                 };
                 inteList.Add(inteInfo);
             }
-            if(inteList.Count > 0)
+            if (inteList.Count > 0)
             {
                 return memberIntegralDAL.clearCardIntegralValue(inteList);
 
@@ -55,4 +55,20 @@ namespace hotelManagementApp.BLL
             else return false;
 
         }
+
+        /// <summary>
+        /// 积分兑换
+        /// </summary>
+        /// <param name="inteInfo"></param>
+        /// <returns></returns>
+        public bool integralExchange(integralRecord inteInfo)
+        {
+            if (inteInfo != null)
+            {
+                return memberIntegralDAL.integralExchange(inteInfo);
+
+            }
+            else return false;
+        }
+    }
 }

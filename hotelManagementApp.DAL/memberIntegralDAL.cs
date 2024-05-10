@@ -39,5 +39,33 @@ namespace hotelManagementApp.DAL
             }
             return sqlHelper.ExecuteTrans(comList);
         }
+
+        /// <summary>
+        /// 积分兑换
+        /// </summary>
+        /// <param name="inteInfo"></param>
+        /// <returns></returns>
+        public bool integralExchange(integralRecord inteInfo)
+        {
+            List<commandInfo> comList = new List<commandInfo>();
+            //修改会员卡可用积分
+            comList.Add(new commandInfo()
+            {
+                commandText = $"update memberCard set integralValue=integralValue-{Math.Abs(inteInfo.integralValue)} where cardNo='{inteInfo.cardNo}'",
+                IsProc = false
+            });
+            //添加积分记录
+            string cols = "cardNo,integralName,integralValue";
+            sqlModel inteModel = CreateSql.CreateInsertSql(inteInfo, cols, 0);
+            comList.Add(new commandInfo()
+            {
+                commandText = inteModel.Sql,
+                IsProc = false,
+                Paras = inteModel.Paras
+            });
+            return sqlHelper.ExecuteTrans(comList);
+        }
+
+
     }
 }

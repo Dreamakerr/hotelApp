@@ -47,7 +47,6 @@
             this.txtExchangeIntegral.Name = "txtExchangeIntegral";
             this.txtExchangeIntegral.Size = new System.Drawing.Size(414, 28);
             this.txtExchangeIntegral.TabIndex = 57;
-            this.txtExchangeIntegral.TextChanged += new System.EventHandler(this.txtExchangeIntegral_TextChanged);
             // 
             // label6
             // 
@@ -58,7 +57,6 @@
             this.label6.Size = new System.Drawing.Size(117, 28);
             this.label6.TabIndex = 56;
             this.label6.Text = "兑换积分：";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtIntegralValue
             // 
@@ -67,7 +65,6 @@
             this.txtIntegralValue.ReadOnly = true;
             this.txtIntegralValue.Size = new System.Drawing.Size(414, 28);
             this.txtIntegralValue.TabIndex = 55;
-            this.txtIntegralValue.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtGiftName
             // 
@@ -75,7 +72,6 @@
             this.txtGiftName.Name = "txtGiftName";
             this.txtGiftName.Size = new System.Drawing.Size(414, 28);
             this.txtGiftName.TabIndex = 53;
-            this.txtGiftName.TextChanged += new System.EventHandler(this.txtGiftName_TextChanged);
             // 
             // label3
             // 
@@ -86,7 +82,6 @@
             this.label3.Size = new System.Drawing.Size(117, 28);
             this.label3.TabIndex = 52;
             this.label3.Text = "兑换礼品：";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtCardNo
             // 
@@ -95,7 +90,6 @@
             this.txtCardNo.ReadOnly = true;
             this.txtCardNo.Size = new System.Drawing.Size(414, 28);
             this.txtCardNo.TabIndex = 51;
-            this.txtCardNo.TextChanged += new System.EventHandler(this.txtCardNo_TextChanged);
             // 
             // label2
             // 
@@ -106,7 +100,6 @@
             this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 50;
             this.label2.Text = "会员卡号：";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnOK
             // 
@@ -132,7 +125,6 @@
             this.label1.Size = new System.Drawing.Size(117, 28);
             this.label1.TabIndex = 47;
             this.label1.Text = "可用积分：";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtMName
             // 
@@ -141,7 +133,6 @@
             this.txtMName.ReadOnly = true;
             this.txtMName.Size = new System.Drawing.Size(414, 28);
             this.txtMName.TabIndex = 46;
-            this.txtMName.TextChanged += new System.EventHandler(this.txtMName_TextChanged);
             // 
             // label4
             // 
@@ -152,7 +143,6 @@
             this.label4.Size = new System.Drawing.Size(117, 28);
             this.label4.TabIndex = 45;
             this.label4.Text = "会员姓名：";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // FrmIntegralExchange
             // 
@@ -173,6 +163,7 @@
             this.Name = "FrmIntegralExchange";
             this.ShowIcon = false;
             this.Text = "积分兑换";
+            this.Load += new System.EventHandler(this.FrmIntegralExchange_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

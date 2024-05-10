@@ -133,6 +133,7 @@
             this.btnExchange.TabIndex = 50;
             this.btnExchange.Text = "积分兑换";
             this.btnExchange.UseVisualStyleBackColor = false;
+            this.btnExchange.Click += new System.EventHandler(this.btnExchange_Click);
             // 
             // btnClear
             // 

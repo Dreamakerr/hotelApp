@@ -23,7 +23,7 @@ namespace hotelManagementApp.memberInfo
 
         memberIntegralBLL memberIntegralBLL = new memberIntegralBLL();
         List<vMemberCard> allList = new List<vMemberCard>();//存储所有列表
-
+        int selIndex = -1;//选择项索引
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -153,6 +153,55 @@ namespace hotelManagementApp.memberInfo
             {
                 MessageHelper.Error(msgTitle, "请选择要清空积分的会员卡！");
                 return;
+            }
+        }
+
+        /// <summary>
+        /// 积分兑换按钮响应
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExchange_Click(object sender, EventArgs e)
+        {
+            if(lvMemberIntegralList.SelectedItems.Count > 0)
+            {
+                selIndex = lvMemberIntegralList.SelectedIndices[0];
+                vMemberCard cardInfo = allList[selIndex];
+                if (cardInfo.integralValue > 0)
+                {
+                    FrmIntegralExchange frmExchange = new FrmIntegralExchange();
+                    frmExchange.cardInfo = cardInfo;
+                    frmExchange.integralExchanged += FrmExchange_integralExchanged;
+                    frmExchange.MdiParent = this.MdiParent;
+                    frmExchange.Show();
+                }
+                else
+                {
+                    MessageHelper.Error("积分兑换", "当前会员卡积分不足，无法兑换！");
+                    return;
+                }
+            }
+            else
+            {
+                MessageHelper.Error("积分兑换", "请选择要兑换积分的会员卡！");
+                return;
+            }
+        }
+        
+        /// <summary>
+        /// 积分兑换成功后执行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmExchange_integralExchanged(object sender, integralRefreshEventArgs e)
+        {
+            if(e.integralValue > 0)
+            {
+                //会员卡积分刷新
+                vMemberCard cardInfo = allList[selIndex];
+                cardInfo.integralValue -= e.integralValue;
+                ListViewItem li = lvMemberIntegralList.Items[selIndex];
+                li.SubItems[3].Text = cardInfo.integralValue.ToString();
             }
         }
     }

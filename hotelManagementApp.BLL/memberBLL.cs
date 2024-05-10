@@ -1,5 +1,7 @@
 ﻿using hotelManagementApp.DAL;
 using hotelManagementApp.Models;
+using hotelManagementApp.Models.UIModels;
+using hotelManagementApp.Models.VModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,7 @@ namespace hotelManagementApp.BLL
     public class memberBLL
     {
         memberDAL memberDAL = new memberDAL();
+        viewMemberDAL viewMemberDAL = new viewMemberDAL();
 
         /// <summary>
         /// 关键词查询会员列表
@@ -84,5 +87,46 @@ namespace hotelManagementApp.BLL
         {
             return memberDAL.deleteMemberList(memberIds, 1, 2);
         }
+
+        /// <summary>
+        /// 新增会员统计
+        /// </summary>
+        /// <returns></returns>
+        public newMemberStatInfo statisticsNewMembers()
+        {
+            newMemberStatInfo statInfo = new newMemberStatInfo();
+            statInfo.newMemberList = viewMemberDAL.getNewMemberList();
+            if(statInfo.newMemberList.Count > 0)
+            {
+                statInfo.totalNewCount = statInfo.newMemberList.Count;
+                //筛选出所有的类型
+                List<string> types = statInfo.newMemberList.Select(m => m.cTypeName).Distinct().ToList();
+                foreach(vMember m in statInfo.newMemberList)
+                {
+                    switch(m.cTypeName)
+                    {
+                        case "普通卡":
+                            statInfo.comCardCount += 1;
+                            break;
+                        case "银卡":
+                            statInfo.silverCardCount += 1;
+                            break;
+                        case "金卡":
+                            statInfo.goldCardCount += 1;
+                            break;
+                        case "钻卡":
+                            statInfo.diamondCardCount += 1;
+                            break;
+                        default:
+                            statInfo.otherCardCount += 1;
+                            break;
+                    }
+
+                }
+            }
+
+            return statInfo;
+        }
+
     }
 }

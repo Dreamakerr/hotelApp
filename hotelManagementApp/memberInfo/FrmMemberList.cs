@@ -90,7 +90,6 @@ namespace hotelManagementApp.memberInfo
             string strNew = member.isNew ? "是" : "否";
             li.SubItems.Add(strNew);
             li.SubItems.Add(member.createTime.ToString("yyyy-MM-dd HH:mm:ss"));
-
             return li;
         }
 

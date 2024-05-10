@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "1001",
             "张三",
             "2024042900001",
@@ -44,17 +44,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblGoldCount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblSuperCount = new System.Windows.Forms.Label();
+            this.lblDiamondCount = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lvNewMemberList = new System.Windows.Forms.ListView();
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCardNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCreateDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnStatistics = new System.Windows.Forms.Button();
+            this.lblOtherCount = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,7 +127,7 @@
             this.lblGoldCount.AutoSize = true;
             this.lblGoldCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblGoldCount.ForeColor = System.Drawing.Color.Orange;
-            this.lblGoldCount.Location = new System.Drawing.Point(797, 147);
+            this.lblGoldCount.Location = new System.Drawing.Point(713, 147);
             this.lblGoldCount.Name = "lblGoldCount";
             this.lblGoldCount.Size = new System.Drawing.Size(38, 28);
             this.lblGoldCount.TabIndex = 7;
@@ -135,28 +137,28 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(674, 147);
+            this.label8.Location = new System.Drawing.Point(590, 147);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 28);
             this.label8.TabIndex = 6;
             this.label8.Text = "金卡会员：";
             // 
-            // lblSuperCount
+            // lblDiamondCount
             // 
-            this.lblSuperCount.AutoSize = true;
-            this.lblSuperCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblSuperCount.ForeColor = System.Drawing.Color.DeepPink;
-            this.lblSuperCount.Location = new System.Drawing.Point(1092, 147);
-            this.lblSuperCount.Name = "lblSuperCount";
-            this.lblSuperCount.Size = new System.Drawing.Size(38, 28);
-            this.lblSuperCount.TabIndex = 9;
-            this.lblSuperCount.Text = "13";
+            this.lblDiamondCount.AutoSize = true;
+            this.lblDiamondCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblDiamondCount.ForeColor = System.Drawing.Color.DeepPink;
+            this.lblDiamondCount.Location = new System.Drawing.Point(963, 147);
+            this.lblDiamondCount.Name = "lblDiamondCount";
+            this.lblDiamondCount.Size = new System.Drawing.Size(38, 28);
+            this.lblDiamondCount.TabIndex = 9;
+            this.lblDiamondCount.Text = "13";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(978, 147);
+            this.label10.Location = new System.Drawing.Point(849, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 28);
             this.label10.TabIndex = 8;
@@ -179,7 +181,7 @@
             this.lvNewMemberList.FullRowSelect = true;
             this.lvNewMemberList.HideSelection = false;
             this.lvNewMemberList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem3});
             this.lvNewMemberList.Location = new System.Drawing.Point(28, 214);
             this.lvNewMemberList.Name = "lvNewMemberList";
             this.lvNewMemberList.Size = new System.Drawing.Size(1255, 420);
@@ -206,15 +208,15 @@
             this.colSex.Text = "性别";
             this.colSex.Width = 64;
             // 
+            // colType
+            // 
+            this.colType.Text = "会员卡类型";
+            this.colType.Width = 131;
+            // 
             // colPhone
             // 
             this.colPhone.Text = "手机号码";
             this.colPhone.Width = 163;
-            // 
-            // colType
-            // 
-            this.colType.Text = "会员类型";
-            this.colType.Width = 100;
             // 
             // colCreateDate
             // 
@@ -234,15 +236,39 @@
             this.btnStatistics.TabIndex = 41;
             this.btnStatistics.Text = "重新统计";
             this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // lblOtherCount
+            // 
+            this.lblOtherCount.AutoSize = true;
+            this.lblOtherCount.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblOtherCount.ForeColor = System.Drawing.Color.MediumPurple;
+            this.lblOtherCount.Location = new System.Drawing.Point(1155, 147);
+            this.lblOtherCount.Name = "lblOtherCount";
+            this.lblOtherCount.Size = new System.Drawing.Size(38, 28);
+            this.lblOtherCount.TabIndex = 43;
+            this.lblOtherCount.Text = "13";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(1074, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 28);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "其他：";
             // 
             // FrmNewMemberReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1320, 688);
+            this.Controls.Add(this.lblOtherCount);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.lvNewMemberList);
-            this.Controls.Add(this.lblSuperCount);
+            this.Controls.Add(this.lblDiamondCount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblGoldCount);
             this.Controls.Add(this.label8);
@@ -255,6 +281,7 @@
             this.Name = "FrmNewMemberReport";
             this.ShowIcon = false;
             this.Text = "新增会员报表";
+            this.Load += new System.EventHandler(this.FrmNewMemberReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +297,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblGoldCount;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lblSuperCount;
+        private System.Windows.Forms.Label lblDiamondCount;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListView lvNewMemberList;
         private System.Windows.Forms.ColumnHeader colId;
@@ -281,5 +308,7 @@
         private System.Windows.Forms.ColumnHeader colPhone;
         private System.Windows.Forms.ColumnHeader colCreateDate;
         private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Label lblOtherCount;
+        private System.Windows.Forms.Label label3;
     }
 }
