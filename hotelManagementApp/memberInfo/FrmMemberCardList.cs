@@ -125,31 +125,10 @@ namespace hotelManagementApp.memberInfo
             li.SubItems.Add(cardInfo.balance.ToString());
             li.SubItems.Add(cardInfo.createDate.ToString("yyyy-MM-dd"));
             li.SubItems.Add(cardInfo.integralValue.ToString());
-            li.SubItems.Add(getStateName(cardInfo.cardState));
+            li.SubItems.Add(formUtility.getStateName(cardInfo.cardState));
             return li;
         }
 
-        /// <summary>
-        /// 将状态值转换为状态名称
-        /// </summary>
-        /// <param name="state"></param>
-        /// <returns></returns>
-        private string getStateName(int state)
-        {
-            string stateName = "";
-            switch (state)
-            {
-                case 0:
-                    stateName = "已冻结"; break;
-                case 1:
-                    stateName = "已激活"; break;
-                case 2:
-                    stateName = "已销卡"; break;
-                default:
-                    break;
-            }
-            return stateName;
-        }
 
         /// <summary>
         /// 加载会员卡类型下拉框
@@ -194,7 +173,7 @@ namespace hotelManagementApp.memberInfo
                 selIndex = lvMemberCardList.SelectedIndices[0];
                 vMemberCard cardInfo = allCards[selIndex];//选择的第一行的卡信息
                 int state = cardInfo.cardState;//状态
-                setBtnsEnabled(getStateName(state));//设置按钮的可用性
+                setBtnsEnabled(formUtility.getStateName(state));//设置按钮的可用性
 
 
 

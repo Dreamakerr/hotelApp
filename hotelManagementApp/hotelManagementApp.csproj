@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utility\formUtility.cs" />
     <Compile Include="utility\mCardEditEventArgs.cs" />
     <Compile Include="utility\mCardEventArgs.cs" />
     <Compile Include="utility\balanceRefreshEventArgs.cs" />

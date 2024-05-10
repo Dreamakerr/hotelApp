@@ -75,6 +75,7 @@
             this.btnFind.TabIndex = 39;
             this.btnFind.Text = "查询";
             this.btnFind.UseVisualStyleBackColor = false;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // txtKeyword
             // 
@@ -147,6 +148,7 @@
             this.btnClear.TabIndex = 49;
             this.btnClear.Text = "清空积分";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label8
             // 
@@ -224,6 +226,7 @@
             this.Name = "FrmMemberIntegralList";
             this.ShowIcon = false;
             this.Text = "会员积分管理";
+            this.Load += new System.EventHandler(this.FrmMemberIntegralList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

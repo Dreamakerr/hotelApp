@@ -109,7 +109,7 @@ namespace hotelManagementApp.memberInfo
             btnAdd.Text = "新增";
             memberId = 0;
             oldName = "";
-            btnAddCard.Enabled = true;
+            btnAddCard.Visible = true;
         }
 
 
