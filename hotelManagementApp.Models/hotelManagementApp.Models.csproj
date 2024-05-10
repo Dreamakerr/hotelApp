@@ -51,6 +51,7 @@
     <Compile Include="UIModels\newMemberStatInfo.cs" />
     <Compile Include="UIModels\pageModel.cs" />
     <Compile Include="user.cs" />
+    <Compile Include="VModels\vExpendRecord.cs" />
     <Compile Include="VModels\vMember.cs" />
     <Compile Include="VModels\vMemberCard.cs" />
   </ItemGroup>
