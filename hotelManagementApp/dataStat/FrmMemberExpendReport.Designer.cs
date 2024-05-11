@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "1001",
             "张三",
             "2024042900001",
@@ -65,22 +65,22 @@
             // colPayAmount
             // 
             this.colPayAmount.Text = "实付金额";
-            this.colPayAmount.Width = 163;
+            this.colPayAmount.Width = 100;
             // 
             // colRoomNo
             // 
             this.colRoomNo.Text = "房间号";
-            this.colRoomNo.Width = 132;
+            this.colRoomNo.Width = 100;
             // 
             // colCardNo
             // 
             this.colCardNo.Text = "卡号";
-            this.colCardNo.Width = 182;
+            this.colCardNo.Width = 150;
             // 
             // colName
             // 
             this.colName.Text = "姓名";
-            this.colName.Width = 100;
+            this.colName.Width = 70;
             // 
             // colId
             // 
@@ -103,10 +103,10 @@
             this.lvMemberExpendList.FullRowSelect = true;
             this.lvMemberExpendList.HideSelection = false;
             this.lvMemberExpendList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lvMemberExpendList.Location = new System.Drawing.Point(30, 179);
             this.lvMemberExpendList.Name = "lvMemberExpendList";
-            this.lvMemberExpendList.Size = new System.Drawing.Size(1023, 547);
+            this.lvMemberExpendList.Size = new System.Drawing.Size(1260, 547);
             this.lvMemberExpendList.TabIndex = 29;
             this.lvMemberExpendList.UseCompatibleStateImageBehavior = false;
             this.lvMemberExpendList.View = System.Windows.Forms.View.Details;
@@ -114,7 +114,7 @@
             // colExpendAmount
             // 
             this.colExpendAmount.Text = "消费金额";
-            this.colExpendAmount.Width = 158;
+            this.colExpendAmount.Width = 100;
             // 
             // lblSuperName
             // 
@@ -234,12 +234,13 @@
             this.btnStatistics.TabIndex = 41;
             this.btnStatistics.Text = "重新统计";
             this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
-            // FrmMemberexpendReport
+            // FrmMemberExpendReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 781);
+            this.ClientSize = new System.Drawing.Size(1315, 781);
             this.Controls.Add(this.btnStatistics);
             this.Controls.Add(this.lvMemberExpendList);
             this.Controls.Add(this.lblSuperName);
@@ -252,9 +253,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.label1);
-            this.Name = "FrmMemberexpendReport";
+            this.Name = "FrmMemberExpendReport";
             this.ShowIcon = false;
             this.Text = "会员消费报表";
+            this.Load += new System.EventHandler(this.FrmMemberExpendReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

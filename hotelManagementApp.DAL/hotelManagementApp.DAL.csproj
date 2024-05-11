@@ -59,6 +59,7 @@
     <Compile Include="viewExpendRecord.cs" />
     <Compile Include="viewMemberCardDAL.cs" />
     <Compile Include="viewMemberDAL.cs" />
+    <Compile Include="viewMemberIntegralDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\common\common.csproj">

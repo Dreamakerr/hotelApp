@@ -2,6 +2,7 @@
 using hotelManagementApp.DAL.Base;
 using hotelManagementApp.DAL.Helper;
 using hotelManagementApp.Models;
+using hotelManagementApp.Models.UIModels;
 using hotelManagementApp.Models.VModels;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace hotelManagementApp.BLL
     {
         viewMemberCardDAL vMemberDAL = new viewMemberCardDAL();
         memberIntegralDAL memberIntegralDAL = new memberIntegralDAL();
+        viewMemberIntegralDAL vMemberIntegralDAL = new viewMemberIntegralDAL();
 
         /// <summary>
         /// 条件查询会员卡积分列表
@@ -69,6 +71,25 @@ namespace hotelManagementApp.BLL
 
             }
             else return false;
+        }
+
+        /// <summary>
+        /// 积分统计
+        /// </summary>
+        /// <returns></returns>
+        public memberIntegralStat statisticsIntegralData()
+        {
+            memberIntegralStat statInfo = new memberIntegralStat();
+            statInfo.integralList = vMemberIntegralDAL.getAllMemberIntegralList();//获取积分列表
+            if(statInfo.integralList.Count > 0)
+            {
+                var inteList = statInfo.integralList;
+                statInfo.maxIntegralVal = inteList.Max(i => i.integralValue);
+                statInfo.minIntegralVal = inteList.Min(i => i.integralValue);
+                statInfo.maxTotalIntegralValue = inteList.Max(i => i.integralTotal);
+                statInfo.minTotalIntegralValue = inteList.Min(i => i.integralTotal);
+            }
+            return statInfo;
         }
     }
 }

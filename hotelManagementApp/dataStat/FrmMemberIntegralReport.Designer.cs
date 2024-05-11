@@ -37,8 +37,8 @@
             "-1000"}, -1);
             this.lvMemberIntegralList = new System.Windows.Forms.ListView();
             this.colId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colCardNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colIntegralValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTotalIntegralValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colUsedIntegralValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -70,7 +70,7 @@
             this.lvMemberIntegralList.HideSelection = false;
             this.lvMemberIntegralList.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.lvMemberIntegralList.Location = new System.Drawing.Point(40, 129);
+            this.lvMemberIntegralList.Location = new System.Drawing.Point(45, 141);
             this.lvMemberIntegralList.Name = "lvMemberIntegralList";
             this.lvMemberIntegralList.Size = new System.Drawing.Size(1327, 680);
             this.lvMemberIntegralList.TabIndex = 30;
@@ -82,30 +82,30 @@
             this.colId.Text = "编号";
             this.colId.Width = 80;
             // 
-            // colName
-            // 
-            this.colName.Text = "姓名";
-            this.colName.Width = 172;
-            // 
             // colCardNo
             // 
             this.colCardNo.Text = "卡号";
             this.colCardNo.Width = 182;
             // 
+            // colName
+            // 
+            this.colName.Text = "姓名";
+            this.colName.Width = 117;
+            // 
             // colIntegralValue
             // 
             this.colIntegralValue.Text = "可用积分";
-            this.colIntegralValue.Width = 132;
+            this.colIntegralValue.Width = 100;
             // 
             // colTotalIntegralValue
             // 
             this.colTotalIntegralValue.Text = "总积分";
-            this.colTotalIntegralValue.Width = 158;
+            this.colTotalIntegralValue.Width = 100;
             // 
             // colUsedIntegralValue
             // 
             this.colUsedIntegralValue.Text = "已用积分";
-            this.colUsedIntegralValue.Width = 163;
+            this.colUsedIntegralValue.Width = 100;
             // 
             // lblTotalMaxIntegral
             // 
@@ -204,6 +204,7 @@
             this.btnStatistics.TabIndex = 40;
             this.btnStatistics.Text = "重新统计";
             this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // FrmMemberIntegralReport
             // 
@@ -223,6 +224,7 @@
             this.Name = "FrmMemberIntegralReport";
             this.ShowIcon = false;
             this.Text = "会员积分报表";
+            this.Load += new System.EventHandler(this.FrmMemberIntegralReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
