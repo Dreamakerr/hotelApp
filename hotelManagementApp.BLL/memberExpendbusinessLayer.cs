@@ -1,20 +1,21 @@
-﻿using hotelManagementApp.DAL;
-using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.UIModels;
+﻿using hotelManagementApp.dataLayer;
+using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class memberExpendBLL
+    public class memberExpendbusinessLayer
     {
-        memberExpendDAL memberExpendDAL = new memberExpendDAL();
-        viewExpendRecord viewExpendRecord = new viewExpendRecord();
+        memberExpenddataLayer memberExpendDAL = new memberExpenddataLayer();
+        viewExpendRecorddataLayer viewExpendRecord = new viewExpendRecorddataLayer();
 
         /// <summary>
         /// 会员退房
@@ -75,5 +76,16 @@ namespace hotelManagementApp.BLL
             }
             return statInfo;
         }
+
+        /// <summary>
+        /// 查询具体会员消费信息
+        /// </summary>
+        /// <param name="keywords"></param>
+        /// <returns></returns>
+        public List<vExpendRecord> statisticsMemberExpendData(string keywords)
+        {
+            return viewExpendRecord.statisticsMemberExpendData(keywords);
+        }
+
     }
 }

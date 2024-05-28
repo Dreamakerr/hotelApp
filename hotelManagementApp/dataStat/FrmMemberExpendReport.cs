@@ -1,6 +1,7 @@
-﻿using hotelManagementApp.BLL;
-using hotelManagementApp.Models.UIModels;
-using hotelManagementApp.Models.VModels;
+﻿using common;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace hotelManagementApp.dataStat
             InitializeComponent();
         }
 
-        memberExpendBLL expendBLL = new memberExpendBLL();
+        memberExpendbusinessLayer expendBLL = new memberExpendbusinessLayer();
 
         /// <summary>
         /// 页面加载
@@ -90,6 +91,46 @@ namespace hotelManagementApp.dataStat
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             statisticsExpendData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// 查询具体会员信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            lvMemberExpendList.Items.Clear();
+            string keywords = txtKeyword.Text.Trim();
+            var expendList = expendBLL.statisticsMemberExpendData(keywords);
+            if(expendList != null)
+            {
+                foreach(var record in expendList)
+                {
+                    ListViewItem li = addItem(record);
+                    lvMemberExpendList.Items.Add(li);
+                }
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

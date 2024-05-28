@@ -1,5 +1,5 @@
 ﻿using common;
-using hotelManagementApp.DAL.Helper;
+using hotelManagementApp.dataLayer.Helper;
 using hotelManagementApp.Models.UIModels;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL.Base
+namespace hotelManagementApp.dataLayer.Base
 {
     public class BQuery<T> where T : class
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL.Helper
+namespace hotelManagementApp.dataLayer.Helper
 {
     public class commandInfo
     {

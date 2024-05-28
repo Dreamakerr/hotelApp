@@ -1,6 +1,6 @@
-﻿using hotelManagementApp.BLL;
-using hotelManagementApp.Models.UIModels;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace hotelManagementApp.dataStat
             InitializeComponent();
         }
 
-        memberIntegralBLL memberIntegralBLL = new memberIntegralBLL();
+        memberIntegralbusinessLayer memberIntegralBLL = new memberIntegralbusinessLayer();
 
         /// <summary>
         /// 页面加载
@@ -83,6 +83,31 @@ namespace hotelManagementApp.dataStat
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             statisticsIntegralData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        
+        /// <summary>
+        /// 查询具体会员积分信息
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            lvMemberIntegralList.Items.Clear();
+            string keywords = txtKeyword.Text.Trim();
+            var integralList = memberIntegralBLL.statisticsMemberIntegralData(keywords);
+            if(integralList != null)
+            {
+                foreach(var inteInfo in integralList)
+                {
+                    ListViewItem li = addItem(inteInfo);
+                    lvMemberIntegralList.Items.Add(li);
+                }
+            }
         }
     }
 }

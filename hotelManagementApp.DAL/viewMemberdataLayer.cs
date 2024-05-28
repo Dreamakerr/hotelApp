@@ -1,14 +1,14 @@
-﻿using hotelManagementApp.DAL.Base;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
-    public class viewMemberDAL:BQuery<vMember>
+    public class viewMemberdataLayer:BQuery<vMember>
     {
         /// <summary>
         /// 查询所有新增会员信息

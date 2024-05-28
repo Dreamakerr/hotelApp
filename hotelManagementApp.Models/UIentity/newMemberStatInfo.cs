@@ -1,11 +1,11 @@
-﻿using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.Models.UIModels
+namespace hotelManagementApp.entity.UIentity
 {
     /// <summary>
     /// 新会员统计类

@@ -12,6 +12,30 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+<<<<<<< HEAD
+    <PublishUrl>C:\Users\SoRrY994\Downloads\</PublishUrl>
+=======
+    <PublishUrl>C:\Users\SoRrY994\OneDrive\桌面\</PublishUrl>
+>>>>>>> 20766b7c4a5bde6f66cd8aa172980213438075be
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+<<<<<<< HEAD
+    <ApplicationRevision>3</ApplicationRevision>
+=======
+    <ApplicationRevision>1</ApplicationRevision>
+>>>>>>> 20766b7c4a5bde6f66cd8aa172980213438075be
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +55,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>酒店.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2AA644A7EAF68C8537909064481767F755DBFD59</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>hotelManagementApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -126,6 +165,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSplash.Designer.cs">
+      <DependentUpon>FrmSplash.cs</DependentUpon>
+    </Compile>
     <Compile Include="utility\formUtility.cs" />
     <Compile Include="utility\integralRefreshEventArgs.cs" />
     <Compile Include="utility\mCardEditEventArgs.cs" />
@@ -180,6 +225,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmSplash.resx">
+      <DependentUpon>FrmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="hotelManagementApp_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,15 +247,30 @@
       <Project>{50b0d0e8-408a-45a7-932b-50bf7d7d3b18}</Project>
       <Name>common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\hotelManagementApp.BLL\hotelManagementApp.BLL.csproj">
+    <ProjectReference Include="..\hotelManagementApp.BLL\hotelManagementApp.businessLayer.csproj">
       <Project>{a32230cf-55d5-43a9-ab7c-228231e30b73}</Project>
-      <Name>hotelManagementApp.BLL</Name>
+      <Name>hotelManagementApp.businessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\hotelManagementApp.Models\hotelManagementApp.Models.csproj">
+    <ProjectReference Include="..\hotelManagementApp.Models\hotelManagementApp.entity.csproj">
       <Project>{93856c55-fc68-46ee-b59e-984e0b6d50dc}</Project>
-      <Name>hotelManagementApp.Models</Name>
+      <Name>hotelManagementApp.entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="酒店.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

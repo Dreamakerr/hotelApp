@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.Models.VModels
+namespace hotelManagementApp.entity.Ventity
 {
     /// <summary>
     /// 视图view_MemberIntegral的实体类

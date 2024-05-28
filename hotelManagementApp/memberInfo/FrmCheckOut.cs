@@ -1,7 +1,7 @@
 ﻿using common;
-using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.VModels;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.Ventity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace hotelManagementApp.memberInfo
         {
             InitializeComponent();
         }
-        memberExpendBLL memberExpendBLL = new memberExpendBLL();
+        memberExpendbusinessLayer memberExpendBLL = new memberExpendbusinessLayer();
         //当前会员的会员卡信息
         vMemberCard cardInfo = null;
         public FrmCheckOut(vMemberCard VMemberCard)
@@ -132,6 +132,11 @@ namespace hotelManagementApp.memberInfo
                 txtPayAmount.Text = (decimal.Parse(txtExpendAmount.Text) * (decimal.Parse(txtDiscount.Text) / 100)).ToString("0.00");
 
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

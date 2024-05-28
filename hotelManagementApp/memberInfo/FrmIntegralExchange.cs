@@ -1,7 +1,7 @@
 ﻿using common;
-using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.VModels;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.Ventity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace hotelManagementApp.memberInfo
 
         public event EventHandler<integralRefreshEventArgs> integralExchanged;//积分兑换成功后触发
         public vMemberCard cardInfo = null;//要兑换积分的会员卡信息
-        memberIntegralBLL memberIntegralBLL = new memberIntegralBLL();
+        memberIntegralbusinessLayer memberIntegralBLL = new memberIntegralbusinessLayer();
 
         /// <summary>
         /// 页面加载
@@ -90,6 +90,11 @@ namespace hotelManagementApp.memberInfo
                 return;
             }
 
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

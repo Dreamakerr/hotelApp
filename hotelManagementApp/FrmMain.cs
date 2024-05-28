@@ -122,7 +122,7 @@ namespace hotelManagementApp
                 form = (Form)Activator.CreateInstance(type);
                 if (form != null)
                 {
-                    form.MdiParent = this;
+                    //form.MdiParent = this;
                     form.StartPosition = FormStartPosition.CenterScreen;
                     form.Show();//调用show方法
                 }
@@ -169,6 +169,11 @@ namespace hotelManagementApp
             {
                 e.Cancel = true;//取消关闭
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

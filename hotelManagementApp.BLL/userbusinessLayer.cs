@@ -1,4 +1,4 @@
-﻿using hotelManagementApp.DAL;
+﻿using hotelManagementApp.dataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -6,11 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class userBLL
+    public class userbusinessLayer
     {
-        private userDAL userDAL = new userDAL();
+        private userdataLayer userDAL = new userdataLayer();
         /// <summary>
         /// 用户登录
         /// </summary>
@@ -21,8 +21,6 @@ namespace hotelManagementApp.BLL
         {
            return userDAL.Login(username, password);
         }
-
-
 
     }
 }

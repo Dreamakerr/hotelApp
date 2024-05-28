@@ -1,7 +1,7 @@
-﻿using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.UIModels;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace hotelManagementApp.dataStat
         {
             InitializeComponent();
         }
-        memberBLL memberBLL = new memberBLL();
+        memberbusinessLayer memberBLL = new memberbusinessLayer();
 
 
         /// <summary>
@@ -87,6 +87,11 @@ namespace hotelManagementApp.dataStat
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             statisticsNewMembers();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

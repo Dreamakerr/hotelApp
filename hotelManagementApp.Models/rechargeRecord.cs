@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.Models
+namespace hotelManagementApp.entity
 {
     /// <summary>
     /// 充值记录信息

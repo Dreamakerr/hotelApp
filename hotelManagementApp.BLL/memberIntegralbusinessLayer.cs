@@ -1,9 +1,9 @@
-﻿using hotelManagementApp.DAL;
-using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.UIModels;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.dataLayer;
+using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,13 +11,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class memberIntegralBLL
+    public class memberIntegralbusinessLayer
     {
-        viewMemberCardDAL vMemberDAL = new viewMemberCardDAL();
-        memberIntegralDAL memberIntegralDAL = new memberIntegralDAL();
-        viewMemberIntegralDAL vMemberIntegralDAL = new viewMemberIntegralDAL();
+        viewMemberCarddataLayer vMemberDAL = new viewMemberCarddataLayer();
+        memberIntegraldataLayer memberIntegralDAL = new memberIntegraldataLayer();
+        viewMemberIntegraldataLayer vMemberIntegralDAL = new viewMemberIntegraldataLayer();
 
         /// <summary>
         /// 条件查询会员卡积分列表
@@ -91,5 +91,16 @@ namespace hotelManagementApp.BLL
             }
             return statInfo;
         }
+
+        /// <summary>
+        /// 查询具体会员积分消费信息
+        /// </summary>
+        /// <param name="keywords"></param>
+        /// <returns></returns>
+        public List<vMemberIntegral> statisticsMemberIntegralData(string keywords)
+        {
+            return vMemberIntegralDAL.statisticsMemberIntegralData(keywords);
+        }
+
     }
 }

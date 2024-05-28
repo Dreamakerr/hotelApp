@@ -1,4 +1,4 @@
-﻿using hotelManagementApp.BLL;
+﻿using hotelManagementApp.businessLayer;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -27,16 +27,6 @@ namespace hotelManagementApp
             txtUserName.Focus();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// 登录
         /// </summary>
@@ -63,7 +53,7 @@ namespace hotelManagementApp
 
             //登录
             bool flag = false;
-            userBLL userBLL = new userBLL();
+            userbusinessLayer userBLL = new userbusinessLayer();
             //调用登录方法
             flag = userBLL.Login(username, password);
 
@@ -78,6 +68,12 @@ namespace hotelManagementApp
                 MessageHelper.Error("登录提示", "用户名或密码错误！");
                 return;
             }
+        }
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

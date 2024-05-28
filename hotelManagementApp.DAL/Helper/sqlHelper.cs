@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL.Helper
+namespace hotelManagementApp.dataLayer.Helper
 {
     /// <summary>
     /// 操作数据库执行的帮助类

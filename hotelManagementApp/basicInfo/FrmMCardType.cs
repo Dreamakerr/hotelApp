@@ -1,5 +1,6 @@
-﻿using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
+﻿using common;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace hotelManagementApp.basicData
             InitializeComponent();
         }
 
-        cardTypeBLL cardTypeBLL = new cardTypeBLL();
+        cardTypebusinessLayer cardTypeBLL = new cardTypebusinessLayer();
         int actType = 1;//信息栏提交状态 1-新增 2-修改
         int typeId = 0;//当前修改类型编号
         string oldTName = "";//修改前的类型名称
@@ -58,7 +59,9 @@ namespace hotelManagementApp.basicData
         private void initCtypeInfo()
         {
             txtTypeName.Clear();
-            TxtRemark.Clear();
+            txtDiscount.Clear();
+            txtgiveIntegral.Clear();
+            txtRemark.Clear();
             actType = 1;//新增
             typeId = 0;
             btnAdd.Text = "新增";
@@ -95,7 +98,9 @@ namespace hotelManagementApp.basicData
                 {
                     //加载至信息栏
                     txtTypeName.Text = edit.cTypeName;
-                    TxtRemark.Text = edit.remark;
+                    txtRemark.Text = edit.remark;
+                    txtDiscount.Text = edit.discount.ToString();
+                    txtgiveIntegral.Text = edit.giveIntegral.ToString();
                     oldTName = edit.cTypeName;
                     typeId = id;//当前修改id
                     actType = 2;
@@ -120,7 +125,9 @@ namespace hotelManagementApp.basicData
         {
             //接受信息
             string typeName = txtTypeName.Text.Trim();
-            string remark = TxtRemark.Text.Trim();
+            string remark = txtRemark.Text.Trim();
+            int discount = txtDiscount.Text.GetInt();
+            int giveIntegral = txtgiveIntegral.Text.GetInt();
             //操作
             string actName = actType == 1 ? "新增" : "修改";
             //提示消息框
@@ -131,6 +138,22 @@ namespace hotelManagementApp.basicData
             {
                 MessageHelper.Error(msgTitle, "会员卡类型名称不能为空。");
                 txtTypeName.Focus();
+                return;
+            }
+
+            //判断折扣是否合法
+            if(discount < 0 || discount > 100)
+            {
+                MessageHelper.Error(msgTitle, "折扣不合法。");
+                txtDiscount.Focus();
+                return;
+            }
+
+            //判断赠送积分是否合法
+            if (giveIntegral < 0)
+            {
+                MessageHelper.Error(msgTitle, "赠送积分不合法。");
+                txtgiveIntegral.Focus();
                 return;
             }
 
@@ -145,11 +168,14 @@ namespace hotelManagementApp.basicData
                 }
             }
 
+
             //封装会员卡类型信息
             cardType cardType = new cardType()
             {
                 cTypeId = typeId,
                 cTypeName = typeName,
+                discount = discount,
+                giveIntegral = giveIntegral,
                 remark = remark
             };
 
@@ -188,7 +214,9 @@ namespace hotelManagementApp.basicData
                     allTypeList[index] = cardType;//替换类型列表中的信息
                     oldTName= typeName;//修改前的类型名称
                     txtTypeName.Text = typeName;
-                    TxtRemark.Text = remark;
+                    txtRemark.Text = remark;
+                    txtDiscount.Text = discount.ToString();
+                    txtgiveIntegral.Text = giveIntegral.ToString();
                 }
                 else
                 {
@@ -219,6 +247,13 @@ namespace hotelManagementApp.basicData
             foreach (int index in selIndexes)
             {
                 int id = allTypeList[index].cTypeId;
+
+                if(id == 101 || id == 102 || id == 103 || id == 104)
+                {
+                    MessageHelper.Error(msgTitle, "基础类型不得删除！");
+                    return;
+                }
+
                 if (cardTypeBLL.hasMemberCards(id))
                 {
                     if (hasNames.Length > 0)
@@ -266,6 +301,11 @@ namespace hotelManagementApp.basicData
                 MessageHelper.Error(msgTitle, "没有符合删除的会员卡类型信息！");
                 return;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

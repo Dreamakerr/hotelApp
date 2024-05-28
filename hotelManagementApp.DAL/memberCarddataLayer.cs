@@ -1,8 +1,8 @@
 ﻿using common;
-using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.VModels;
+using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
-    public class memberCardDAL:BaseDAL<memberCard>
+    public class memberCarddataLayer: BasedataLayer<memberCard>
     {
         /// <summary>
         /// 获取指定会员卡类型下已添加的会员卡数量

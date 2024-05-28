@@ -1,5 +1,5 @@
 ﻿using common;
-using hotelManagementApp.DAL.Helper;
+using hotelManagementApp.dataLayer.Helper;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL.Base
+namespace hotelManagementApp.dataLayer.Base
 {
-    public class BaseDAL<T> : BQuery<T> where T : class
+    public class BasedataLayer<T> : BQuery<T> where T : class
     {
         //增  单条    批量
         public int Add(T model, string cols, int isReturn)

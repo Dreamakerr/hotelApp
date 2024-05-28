@@ -1,14 +1,14 @@
-﻿using hotelManagementApp.DAL.Base;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
-    public class CardTypeDAL:BaseDAL<cardType>
+    public class CardTypedataLayer:BasedataLayer<cardType>
     {
         /// <summary>
         /// 添加会员卡类型
@@ -17,7 +17,7 @@ namespace hotelManagementApp.DAL
         /// <returns>生成的id值</returns>
         public int addCardTypeInfo(cardType type)
         {
-            return Add(type, "cTypeName,remark", 1);
+            return Add(type, "cTypeName,remark,discount", 1);
         }
 
         /// <summary>

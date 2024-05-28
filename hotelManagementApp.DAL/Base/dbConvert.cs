@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL.Base
+namespace hotelManagementApp.dataLayer.Base
 {
     /// <summary>
     /// 数据转换类

@@ -1,15 +1,15 @@
-﻿using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
-    public class memberExpendDAL
+    public class memberExpenddataLayer
     {
         /// <summary>
         /// 会员退房

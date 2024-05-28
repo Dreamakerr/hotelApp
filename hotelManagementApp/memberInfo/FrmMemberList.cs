@@ -1,5 +1,5 @@
-﻿using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -20,8 +20,8 @@ namespace hotelManagementApp.memberInfo
         {
             InitializeComponent();
         }
-        memberBLL memberBLL = new memberBLL();
-        memberCardBLL memberCardBLL = new memberCardBLL();
+        memberbusinessLayer memberBLL = new memberbusinessLayer();
+        memberCardbusinessLayer memberCardBLL = new memberCardbusinessLayer();
 
         int actType = 1; //信息栏提交状态 1-新增，2-修改
         int memberId = 0;//当前修改的会员编号
@@ -545,6 +545,11 @@ namespace hotelManagementApp.memberInfo
                 MessageHelper.Error(msgTitle, "请选择要移除的会员信息！");
                 return;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
