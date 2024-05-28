@@ -1,8 +1,8 @@
-﻿using hotelManagementApp.DAL;
-using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.dataLayer;
+using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,12 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class memberCardBLL
+    public class memberCardbusinessLayer
     {
-        memberCardDAL memberCardDAL = new memberCardDAL();
-        viewMemberCardDAL viewMemberCardDAL = new viewMemberCardDAL();
+        memberCarddataLayer memberCardDAL = new memberCarddataLayer();
+        viewMemberCarddataLayer viewMemberCardDAL = new viewMemberCarddataLayer();
         /// <summary>
         /// 获取指定的会员卡信息
         /// </summary>

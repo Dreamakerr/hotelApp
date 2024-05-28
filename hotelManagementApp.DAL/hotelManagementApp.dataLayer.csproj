@@ -7,8 +7,8 @@
     <ProjectGuid>{A68D6469-333E-4C5B-B676-DFBD6C7A6EB5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>hotelManagementApp.DAL</RootNamespace>
-    <AssemblyName>hotelManagementApp.DAL</AssemblyName>
+    <RootNamespace>hotelManagementApp.dataLayer</RootNamespace>
+    <AssemblyName>hotelManagementApp.dataLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,33 +42,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\baseDAL.cs" />
+    <Compile Include="Base\basedataLayer.cs" />
     <Compile Include="Base\bQuery.cs" />
     <Compile Include="Base\createSql.cs" />
     <Compile Include="Base\dbConvert.cs" />
     <Compile Include="Base\sqlModel.cs" />
-    <Compile Include="CardTypeDAL.cs" />
+    <Compile Include="CardTypedataLayer.cs" />
     <Compile Include="Helper\commandInfo.cs" />
     <Compile Include="Helper\sqlHelper.cs" />
-    <Compile Include="memberCardDAL.cs" />
-    <Compile Include="memberDAL.cs" />
-    <Compile Include="memberExpendDAL.cs" />
-    <Compile Include="memberIntegralDAL.cs" />
+    <Compile Include="memberCarddataLayer.cs" />
+    <Compile Include="memberdataLayer.cs" />
+    <Compile Include="memberExpenddataLayer.cs" />
+    <Compile Include="memberIntegraldataLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="userDAL.cs" />
-    <Compile Include="viewExpendRecord.cs" />
-    <Compile Include="viewMemberCardDAL.cs" />
-    <Compile Include="viewMemberDAL.cs" />
-    <Compile Include="viewMemberIntegralDAL.cs" />
+    <Compile Include="userdataLayer.cs" />
+    <Compile Include="viewExpendRecorddataLayer.cs" />
+    <Compile Include="viewMemberCarddataLayer.cs" />
+    <Compile Include="viewMemberdataLayer.cs" />
+    <Compile Include="viewMemberIntegraldataLayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\common\common.csproj">
       <Project>{50b0d0e8-408a-45a7-932b-50bf7d7d3b18}</Project>
       <Name>common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\hotelManagementApp.Models\hotelManagementApp.Models.csproj">
+    <ProjectReference Include="..\hotelManagementApp.Models\hotelManagementApp.entity.csproj">
       <Project>{93856c55-fc68-46ee-b59e-984e0b6d50dc}</Project>
-      <Name>hotelManagementApp.Models</Name>
+      <Name>hotelManagementApp.entity</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

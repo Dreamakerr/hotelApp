@@ -1,6 +1,6 @@
 ﻿using common;
-using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -21,12 +21,13 @@ namespace hotelManagementApp.memberInfo
             InitializeComponent();
         }
 
-        cardTypeBLL cTypeBLL = new cardTypeBLL();
-        memberCardBLL memberCardBLL = new memberCardBLL();
+        cardTypebusinessLayer cTypeBLL = new cardTypebusinessLayer();
+        memberCardbusinessLayer memberCardBLL = new memberCardbusinessLayer();
         memberCard editInfo = null;//要修改的会员卡信息
         int cardId = 0;//要修改的会员卡编号
         int actType = 1;//页面提交状态
         int giveIntegral = 0;//赠送积分
+        List<cardType> typeList = new List<cardType>();
 
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace hotelManagementApp.memberInfo
         private void FrmMemberCardInfo_Load(object sender, EventArgs e)
         {
             //加载卡类型下拉框
-            loadMCardTyoes();
+            loadMCardTypes();
 
             //加载会员卡信息（修改）
             initCardInfo();
@@ -103,10 +104,10 @@ namespace hotelManagementApp.memberInfo
         /// <summary>
         /// 加载卡类型下拉框
         /// </summary>
-        private void loadMCardTyoes()
+        private void loadMCardTypes()
         {
             cboCTypes.Items.Clear();
-            List<cardType> typeList = cTypeBLL.getAllCardTypeList();
+            typeList = cTypeBLL.getAllCardTypeList();
             if(typeList.Count > 0)
             {
                 cboCTypes.DisplayMember = "cTypeName";
@@ -125,28 +126,14 @@ namespace hotelManagementApp.memberInfo
         {
             string typeName = cboCTypes.Text.Trim();//类型名
             int discount = 100;
-            switch(typeName)
+            foreach(cardType type in typeList)
             {
-                case "普通卡":
-                    discount = 100;
-                    if (actType == 1)
-                        giveIntegral = 10;
+                if(typeName.Equals(type.cTypeName))
+                {
+                    discount = type.discount;
+                    giveIntegral = type.giveIntegral;
                     break;
-                case "银卡":
-                    discount = 95;
-                    if (actType == 1)
-                        giveIntegral = 20;
-                    break;
-                case "金卡":
-                    discount = 85;
-                    if (actType == 1)
-                        giveIntegral = 50;
-                    break;
-                case "钻卡":
-                    discount = 80;
-                    if (actType == 1)
-                        giveIntegral = 100;
-                    break;
+                }
             }
             txtDiscount.Text = discount.ToString();
         }
@@ -246,6 +233,11 @@ namespace hotelManagementApp.memberInfo
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }

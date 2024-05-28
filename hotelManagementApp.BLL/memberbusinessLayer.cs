@@ -1,19 +1,19 @@
-﻿using hotelManagementApp.DAL;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.UIModels;
-using hotelManagementApp.Models.VModels;
+﻿using hotelManagementApp.dataLayer;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.UIentity;
+using hotelManagementApp.entity.Ventity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class memberBLL
+    public class memberbusinessLayer
     {
-        memberDAL memberDAL = new memberDAL();
-        viewMemberDAL viewMemberDAL = new viewMemberDAL();
+        memberdataLayer memberDAL = new memberdataLayer();
+        viewMemberdataLayer viewMemberDAL = new viewMemberdataLayer();
 
         /// <summary>
         /// 关键词查询会员列表

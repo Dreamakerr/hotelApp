@@ -1,6 +1,6 @@
-﻿using hotelManagementApp.DAL.Base;
-using hotelManagementApp.DAL.Helper;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.dataLayer.Helper;
+using hotelManagementApp.entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -9,9 +9,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
-    public class memberDAL:BaseDAL<member>
+    public class memberdataLayer: BasedataLayer<member>
     {
         /// <summary>
         /// 关键词查询会员信息

@@ -1,6 +1,6 @@
 ﻿using common;
-using hotelManagementApp.BLL;
-using hotelManagementApp.Models.VModels;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity.Ventity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace hotelManagementApp.memberInfo
             InitializeComponent();
         }
 
-        memberIntegralBLL memberIntegralBLL = new memberIntegralBLL();
+        memberIntegralbusinessLayer memberIntegralBLL = new memberIntegralbusinessLayer();
         List<vMemberCard> allList = new List<vMemberCard>();//存储所有列表
         int selIndex = -1;//选择项索引
 
@@ -203,6 +203,11 @@ namespace hotelManagementApp.memberInfo
                 ListViewItem li = lvMemberIntegralList.Items[selIndex];
                 li.SubItems[3].Text = cardInfo.integralValue.ToString();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

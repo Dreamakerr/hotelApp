@@ -1,7 +1,7 @@
 ﻿using common;
-using hotelManagementApp.BLL;
-using hotelManagementApp.Models;
-using hotelManagementApp.Models.VModels;
+using hotelManagementApp.businessLayer;
+using hotelManagementApp.entity;
+using hotelManagementApp.entity.Ventity;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace hotelManagementApp.memberInfo
             InitializeComponent();
         }
 
-        cardTypeBLL cardTypeBLL = new cardTypeBLL();
-        memberCardBLL memberCardBLL = new memberCardBLL();
+        cardTypebusinessLayer cardTypeBLL = new cardTypebusinessLayer();
+        memberCardbusinessLayer memberCardBLL = new memberCardbusinessLayer();
         List<vMemberCard> allCards = new List<vMemberCard>();//存储查询的会员卡列表
         int selIndex = -1;//存储选择行的第一行的索引
 
@@ -439,6 +439,11 @@ namespace hotelManagementApp.memberInfo
                 li.SubItems[5].Text = cardInfo.balance.ToString();
                 li.SubItems[7].Text = cardInfo.integralValue.ToString();
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -28,78 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtExchangeIntegral = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtIntegralValue = new System.Windows.Forms.TextBox();
-            this.txtGiftName = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIntegralExchange));
+            this.txtMName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCardNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMName = new System.Windows.Forms.TextBox();
+            this.txtCardNo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtGiftName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtIntegralValue = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtExchangeIntegral = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtExchangeIntegral
+            // txtMName
             // 
-            this.txtExchangeIntegral.Location = new System.Drawing.Point(336, 347);
-            this.txtExchangeIntegral.Name = "txtExchangeIntegral";
-            this.txtExchangeIntegral.Size = new System.Drawing.Size(414, 28);
-            this.txtExchangeIntegral.TabIndex = 57;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(213, 347);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 28);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "兑换积分：";
-            // 
-            // txtIntegralValue
-            // 
-            this.txtIntegralValue.Location = new System.Drawing.Point(336, 197);
-            this.txtIntegralValue.Name = "txtIntegralValue";
-            this.txtIntegralValue.ReadOnly = true;
-            this.txtIntegralValue.Size = new System.Drawing.Size(414, 28);
-            this.txtIntegralValue.TabIndex = 55;
-            // 
-            // txtGiftName
-            // 
-            this.txtGiftName.Location = new System.Drawing.Point(336, 273);
-            this.txtGiftName.Name = "txtGiftName";
-            this.txtGiftName.Size = new System.Drawing.Size(414, 28);
-            this.txtGiftName.TabIndex = 53;
+            this.txtMName.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtMName.Location = new System.Drawing.Point(323, 108);
+            this.txtMName.Name = "txtMName";
+            this.txtMName.ReadOnly = true;
+            this.txtMName.Size = new System.Drawing.Size(414, 31);
+            this.txtMName.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(213, 273);
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(199)))));
+            this.label3.Location = new System.Drawing.Point(183, 336);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 28);
+            this.label3.Size = new System.Drawing.Size(134, 31);
             this.label3.TabIndex = 52;
             this.label3.Text = "兑换礼品：";
-            // 
-            // txtCardNo
-            // 
-            this.txtCardNo.Location = new System.Drawing.Point(336, 121);
-            this.txtCardNo.Name = "txtCardNo";
-            this.txtCardNo.ReadOnly = true;
-            this.txtCardNo.Size = new System.Drawing.Size(414, 28);
-            this.txtCardNo.TabIndex = 51;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(213, 121);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 28);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "会员卡号：";
             // 
             // btnOK
             // 
@@ -108,10 +84,10 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnOK.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOK.Location = new System.Drawing.Point(454, 422);
+            this.btnOK.Location = new System.Drawing.Point(441, 485);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(121, 59);
-            this.btnOK.TabIndex = 49;
+            this.btnOK.TabIndex = 6;
             this.btnOK.Text = "兑换";
             this.btnOK.UseVisualStyleBackColor = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -119,68 +95,230 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(213, 197);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(199)))));
+            this.label1.Location = new System.Drawing.Point(183, 260);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 28);
+            this.label1.Size = new System.Drawing.Size(134, 31);
             this.label1.TabIndex = 47;
             this.label1.Text = "可用积分：";
             // 
-            // txtMName
+            // txtCardNo
             // 
-            this.txtMName.Location = new System.Drawing.Point(336, 45);
-            this.txtMName.Name = "txtMName";
-            this.txtMName.ReadOnly = true;
-            this.txtMName.Size = new System.Drawing.Size(414, 28);
-            this.txtMName.TabIndex = 46;
+            this.txtCardNo.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtCardNo.Location = new System.Drawing.Point(323, 184);
+            this.txtCardNo.Name = "txtCardNo";
+            this.txtCardNo.ReadOnly = true;
+            this.txtCardNo.Size = new System.Drawing.Size(414, 31);
+            this.txtCardNo.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(199)))));
+            this.label2.Location = new System.Drawing.Point(183, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(134, 31);
+            this.label2.TabIndex = 50;
+            this.label2.Text = "会员卡号：";
+            // 
+            // txtGiftName
+            // 
+            this.txtGiftName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.txtGiftName.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtGiftName.Location = new System.Drawing.Point(323, 336);
+            this.txtGiftName.Name = "txtGiftName";
+            this.txtGiftName.Size = new System.Drawing.Size(414, 31);
+            this.txtGiftName.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(199)))));
+            this.label6.Location = new System.Drawing.Point(183, 410);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 31);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "兑换积分：";
+            // 
+            // txtIntegralValue
+            // 
+            this.txtIntegralValue.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtIntegralValue.Location = new System.Drawing.Point(323, 260);
+            this.txtIntegralValue.Name = "txtIntegralValue";
+            this.txtIntegralValue.ReadOnly = true;
+            this.txtIntegralValue.Size = new System.Drawing.Size(414, 31);
+            this.txtIntegralValue.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(213, 45);
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(79)))), ((int)(((byte)(199)))));
+            this.label4.Location = new System.Drawing.Point(183, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 28);
+            this.label4.Size = new System.Drawing.Size(134, 31);
             this.label4.TabIndex = 45;
             this.label4.Text = "会员姓名：";
+            // 
+            // txtExchangeIntegral
+            // 
+            this.txtExchangeIntegral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.txtExchangeIntegral.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtExchangeIntegral.Location = new System.Drawing.Point(323, 410);
+            this.txtExchangeIntegral.Name = "txtExchangeIntegral";
+            this.txtExchangeIntegral.Size = new System.Drawing.Size(414, 31);
+            this.txtExchangeIntegral.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(462, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(75, 75);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnExit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnExit.Location = new System.Drawing.Point(932, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(50, 50);
+            this.btnExit.TabIndex = 60;
+            this.btnExit.Text = "X";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.pictureBox6);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox4);
+            this.panel1.Controls.Add(this.btnExit);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.txtExchangeIntegral);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtIntegralValue);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtGiftName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtCardNo);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnOK);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtMName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(982, 590);
+            this.panel1.TabIndex = 58;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(142, 410);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 67;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(142, 336);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 66;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(142, 260);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 65;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(142, 104);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 64;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(142, 184);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 63;
+            this.pictureBox4.TabStop = false;
             // 
             // FrmIntegralExchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 533);
-            this.Controls.Add(this.txtExchangeIntegral);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtIntegralValue);
-            this.Controls.Add(this.txtGiftName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCardNo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMName);
-            this.Controls.Add(this.label4);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(249)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(982, 590);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmIntegralExchange";
-            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "积分兑换";
             this.Load += new System.EventHandler(this.FrmIntegralExchange_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtExchangeIntegral;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtIntegralValue;
-        private System.Windows.Forms.TextBox txtGiftName;
+        private System.Windows.Forms.TextBox txtMName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCardNo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMName;
+        private System.Windows.Forms.TextBox txtCardNo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtGiftName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtIntegralValue;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtExchangeIntegral;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

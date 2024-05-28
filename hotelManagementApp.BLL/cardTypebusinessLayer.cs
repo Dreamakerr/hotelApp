@@ -1,18 +1,18 @@
-﻿using hotelManagementApp.DAL;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.dataLayer;
+using hotelManagementApp.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.BLL
+namespace hotelManagementApp.businessLayer
 {
-    public class cardTypeBLL
+    public class cardTypebusinessLayer
     {
 
-        CardTypeDAL cardTypeDAL = new CardTypeDAL();
-        memberCardDAL memberCardDAL = new memberCardDAL();
+        CardTypedataLayer cardTypeDAL = new CardTypedataLayer();
+        memberCarddataLayer memberCardDAL = new memberCarddataLayer();
 
         /// <summary>
         /// 获取所有会员卡类型列表

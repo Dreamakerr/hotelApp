@@ -1,5 +1,5 @@
 ﻿using common;
-using hotelManagementApp.BLL;
+using hotelManagementApp.businessLayer;
 using hotelManagementApp.utility;
 using System;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace hotelManagementApp.memberInfo
         {
             InitializeComponent();
         }
-        memberCardBLL memberCardBLL = new memberCardBLL();
+        memberCardbusinessLayer memberCardBLL = new memberCardbusinessLayer();
         public string cardNo;//要充值的会员卡号
         public event EventHandler<balanceRefreshEventArgs> cardRecharged;//会员卡充值成功后触发事件
 
@@ -64,6 +64,16 @@ namespace hotelManagementApp.memberInfo
                 MessageHelper.Error(msgTitle, "充值失败");
                 return;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

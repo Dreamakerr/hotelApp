@@ -1,5 +1,5 @@
-﻿using hotelManagementApp.DAL.Base;
-using hotelManagementApp.Models;
+﻿using hotelManagementApp.dataLayer.Base;
+using hotelManagementApp.entity;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace hotelManagementApp.DAL
+namespace hotelManagementApp.dataLayer
 {
     /// <summary>
     /// 用户信息数据访问类
     /// </summary>
-    public class userDAL:BaseDAL<user>
+    public class userdataLayer: BasedataLayer<user>
     {
         /// <summary>
         /// 用户登录
