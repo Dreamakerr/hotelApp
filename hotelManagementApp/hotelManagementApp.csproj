@@ -13,11 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-<<<<<<< HEAD
-    <PublishUrl>C:\Users\SoRrY994\Downloads\</PublishUrl>
-=======
     <PublishUrl>C:\Users\SoRrY994\OneDrive\桌面\</PublishUrl>
->>>>>>> 20766b7c4a5bde6f66cd8aa172980213438075be
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,11 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-<<<<<<< HEAD
-    <ApplicationRevision>3</ApplicationRevision>
-=======
     <ApplicationRevision>1</ApplicationRevision>
->>>>>>> 20766b7c4a5bde6f66cd8aa172980213438075be
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
